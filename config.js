@@ -5,7 +5,7 @@ requirejs.config({
 });
 var options = {
     value: [
-        `export class MyClass{
+        `class MyClass{
   name:string;
   age:number;
   printMe(){

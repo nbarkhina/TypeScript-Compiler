@@ -16,7 +16,7 @@ define(["require", "exports"], function (require, exports) {
             let source = window.myEditor.getValue();
             let result = ts.transpileModule(source, {
                 compilerOptions: {
-                    module: ts.ModuleKind.AMD,
+                    module: ts.ModuleKind.None,
                     target: "es6",
                     moduleResolution: "node",
                 }
