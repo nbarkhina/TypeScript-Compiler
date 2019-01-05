@@ -13,17 +13,12 @@ define(["require", "exports"], function (require, exports) {
             //     window.myApp.bindTable();
             //     window.myApp.bindRivets();
             // });
-            let source = `export class MyClass{
-            name:string;
-            age:number;
-            printMe(){
-                console.log(this.name + this.age);
-            }
-        }`;
+            let source = window.myEditor.getValue();
             let result = ts.transpileModule(source, {
                 compilerOptions: {
                     module: ts.ModuleKind.AMD,
-                    target: "es6"
+                    target: "es6",
+                    moduleResolution: "node",
                 }
             });
             console.log(result.outputText);
