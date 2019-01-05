@@ -2,8 +2,7 @@ declare var requirejs, require,monaco;
 
 requirejs.config({
     paths: {
-        "angular": "/node_modules/angular/angular",
-        "vs": "/node_modules/monaco-editor/min/vs"
+        "vs": "node_modules/monaco-editor/min/vs"
     }
 });
 
