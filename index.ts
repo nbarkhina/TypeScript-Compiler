@@ -26,7 +26,7 @@ export class MyApp {
 
         let result = ts.transpileModule(source, {
             compilerOptions: { 
-                module: ts.ModuleKind.None,
+                module: ts.ModuleKind.AMD,
                 target: "es6",
                 moduleResolution: "node",
             }

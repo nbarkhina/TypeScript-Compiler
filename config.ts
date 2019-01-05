@@ -8,7 +8,7 @@ requirejs.config({
 
 var options = {
     value: [
-      `class MyClass{
+      `export class MyClass{
   name:string;
   age:number;
   printMe(){
