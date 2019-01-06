@@ -1,11 +1,12 @@
-declare var window,rivets,ts;
+declare var window,rivets;
 
 
 export class MyApp {
 
     constructor() {
-    
+        
         this.bindRivets();
+
         
     }
 
@@ -17,24 +18,18 @@ export class MyApp {
     btnClick() {
 
 
-        // $("#mydiv").load('mytable.html',function(){
-        //     window.myApp.bindTable();
-        //     window.myApp.bindRivets();
-        // });
-
         let source = window.myEditor.getValue();
 
         let result = ts.transpileModule(source, {
             compilerOptions: { 
                 module: ts.ModuleKind.AMD,
-                target: "es6",
-                moduleResolution: "node",
+                target: ts.ScriptTarget.ES2015,
+                moduleResolution: ts.ModuleResolutionKind.NodeJs
             }
           });
 
-        console.log(result.outputText);
+        console.log(result);
  
-        // $("#mydiv").html(result.outputText);
         window.myEditor2.setValue(result.outputText);
         
     }

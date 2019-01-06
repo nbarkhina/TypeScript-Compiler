@@ -9,20 +9,15 @@ define(["require", "exports"], function (require, exports) {
             rivets.bind($('body'), { data: this });
         }
         btnClick() {
-            // $("#mydiv").load('mytable.html',function(){
-            //     window.myApp.bindTable();
-            //     window.myApp.bindRivets();
-            // });
             let source = window.myEditor.getValue();
             let result = ts.transpileModule(source, {
                 compilerOptions: {
                     module: ts.ModuleKind.AMD,
-                    target: "es6",
-                    moduleResolution: "node",
+                    target: ts.ScriptTarget.ES2015,
+                    moduleResolution: ts.ModuleResolutionKind.NodeJs
                 }
             });
-            console.log(result.outputText);
-            // $("#mydiv").html(result.outputText);
+            console.log(result);
             window.myEditor2.setValue(result.outputText);
         }
     }
